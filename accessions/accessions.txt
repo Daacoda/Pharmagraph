@@ -1,1 +1,25 @@
 SRR
+## Entity Accessions & Schema Description
+
+The knowledge graph snapshots (`kg_t0.csv`, `kg_t1.csv`) use standardized biological identifiers (Accessions) to uniquely represent nodes and their provenance:
+
+| Column Name | Description | Example Values |
+| :--- | :--- | :--- |
+| **`x_id` / `y_id`** | Unique numeric/string identifier (Accession) for the source (`x`) and target (`y`) entities from standard databases. | `9796`, `7918`, `4899` (NCBI gene/protein IDs) |
+| **`x_type` / `y_type`** | The biological category of the entity. | `gene/protein`, `drug`, `disease`, `anatomy` |
+| **`x_name` / `y_name`** | The standard scientific name or symbol of the entity for readability. | `PHYHIP`, `TP53`, `SORT1` |
+| **`x_source` / `y_source`** | The upstream database repository origin of the entity record. | `NCBI`, `DrugBank`, `UMLS`, `GO` |
+| Entity / Node Type | Upstream Database Source (`x_source` / `y_source`) | Description / Identifier Scope |
+| :--- | :--- | :--- |
+| **`gene/protein`** | `NCBI` | Gene and protein identifiers and symbols |
+| **`drug`** | `DrugBank` | Pharmaceutical drugs and chemical compounds |
+| **`disease`** | `MONDO`, `MONDO_grouped` | Disease ontologies and groupings |
+| **`effect/phenotype`** | `HPO` | Human Phenotype Ontology terms |
+| **`biological_process`** | `GO` | Gene Ontology - Biological Processes |
+| **`molecular_function`** | `GO` | Gene Ontology - Molecular Functions |
+| **`cellular_component`** | `GO` | Gene Ontology - Cellular Components |
+| **`exposure`** | `CTD` | Comparative Toxicogenomics Database |
+| **`pathway`** | `REACTOME` | Biological pathways and reactions |
+| **`anatomy`** | `UBERON` | Uberon multi-species anatomy ontology |
+|
+| **`relation` / `display_relation`** | The directed edge type representing the biomedical interaction between entity `x` and entity `y`. | `protein_protein` (`ppi`), `indication`, `side_effect` |
