@@ -1,0 +1,41 @@
+PrimeKG-CL Benchmark
+====================
+
+Code and benchmark configuration files in this release: MIT License.
+
+Data files derived from PrimeKG and downstream from the source databases:
+licensed under Creative Commons Attribution 4.0 International (CC BY 4.0),
+inheriting PrimeKG's license. Users must respect upstream-database licenses
+where applicable. The t_1 snapshot was reconstructed from these freely
+accessible upstream databases; restrictively licensed databases (DrugBank,
+UMLS, DrugCentral, SIDER, DisGeNET) are NOT re-queried for t_1 and the t_0
+edges from those sources are carried forward unchanged.
+
+Upstream databases used for t_1 reconstruction:
+  Bgee, CTD, Gene Ontology, Gene2GO, HPO, HPOA, MONDO, Uberon, HGNC.
+
+Citation: see README.md.
+
+----------------------------------------------------------------------
+
+MIT License (code components)
+
+Copyright (c) 2026 The PrimeKG-CL authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

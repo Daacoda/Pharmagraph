@@ -1,0 +1,59 @@
+{
+  "old_snapshot": {
+    "path": "data/benchmark/snapshots/kg_t0.csv",
+    "num_triples": 8100498,
+    "num_entities": 129312,
+    "num_relations": 30
+  },
+  "new_snapshot": {
+    "path": "data/benchmark/snapshots/kg_t1.csv",
+    "num_triples": 13001666,
+    "num_entities": 132914,
+    "num_relations": 25
+  },
+  "diff": {
+    "added_triples": 5760234,
+    "removed_triples": 888848,
+    "persistent_triples": 7208624,
+    "emerged_entities": 36653,
+    "disappeared_entities": 33051,
+    "emerged_relations": 0,
+    "disappeared_relations": 5
+  },
+  "added_by_relation": {
+    "anatomy_protein_present": 4763650,
+    "anatomy_protein_absent": 698316,
+    "bioprocess_protein": 89080,
+    "molfunc_protein": 61502,
+    "cellcomp_protein": 52758,
+    "phenotype_phenotype": 47334,
+    "exposure_protein": 35880,
+    "disease_disease": 16346,
+    "bioprocess_bioprocess": 9322,
+    "anatomy_anatomy": 4676,
+    "molfunc_molfunc": 4256,
+    "disease_phenotype_positive": 1322,
+    "cellcomp_cellcomp": 870,
+    "disease_phenotype_negative": 4
+  },
+  "added_by_x_type": {
+    "gene/protein": 2850593,
+    "anatomy": 2735659,
+    "biological_process": 53862,
+    "effect/phenotype": 47997,
+    "molecular_function": 35007,
+    "cellular_component": 27249,
+    "exposure": 17940,
+    "disease": 17009
+  },
+  "added_by_y_type": {
+    "gene/protein": 2850593,
+    "anatomy": 2735659,
+    "biological_process": 53862,
+    "effect/phenotype": 47997,
+    "molecular_function": 35007,
+    "cellular_component": 27249,
+    "exposure": 17940,
+    "disease": 17009
+  }
+}

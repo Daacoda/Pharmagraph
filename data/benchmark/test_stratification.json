@@ -1,0 +1,84 @@
+{
+  "per_task": [
+    {
+      "task": "task_0_base",
+      "test": 1620099,
+      "persistent": 1443243,
+      "added": 0,
+      "removed": 176856,
+      "other": 0
+    },
+    {
+      "task": "task_1_disease_related",
+      "test": 3401,
+      "persistent": 0,
+      "added": 3401,
+      "removed": 0,
+      "other": 0
+    },
+    {
+      "task": "task_1_drug_related",
+      "test": 25068,
+      "persistent": 0,
+      "added": 0,
+      "removed": 0,
+      "other": 25068
+    },
+    {
+      "task": "task_2_disease_related",
+      "test": 23076,
+      "persistent": 0,
+      "added": 0,
+      "removed": 0,
+      "other": 23076
+    },
+    {
+      "task": "task_2_gene_protein",
+      "test": 570118,
+      "persistent": 0,
+      "added": 570118,
+      "removed": 0,
+      "other": 0
+    },
+    {
+      "task": "task_3_gene_protein",
+      "test": 19952,
+      "persistent": 0,
+      "added": 0,
+      "removed": 0,
+      "other": 19952
+    },
+    {
+      "task": "task_3_phenotype_related",
+      "test": 9599,
+      "persistent": 0,
+      "added": 9599,
+      "removed": 0,
+      "other": 0
+    },
+    {
+      "task": "task_4_biological_process",
+      "test": 23223,
+      "persistent": 0,
+      "added": 23223,
+      "removed": 0,
+      "other": 0
+    },
+    {
+      "task": "task_4_phenotype_related",
+      "test": 11478,
+      "persistent": 0,
+      "added": 0,
+      "removed": 0,
+      "other": 11478
+    },
+    {
+      "task": "task_5_anatomy_pathway",
+      "test": 550535,
+      "persistent": 0,
+      "added": 550535,
+      "removed": 0,
+      "other": 0
+    }
+  ]
+}

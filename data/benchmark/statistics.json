@@ -1,0 +1,85 @@
+{
+  "benchmark_version": "1.0",
+  "strategy": "entity_type",
+  "seed": 42,
+  "val_ratio": 0.1,
+  "test_ratio": 0.2,
+  "min_triples": 100,
+  "snapshots": {
+    "t0": {
+      "path": "data/benchmark/snapshots/kg_t0.csv",
+      "num_triples": 8100498
+    },
+    "t1": {
+      "path": "data/benchmark/snapshots/kg_t1.csv",
+      "num_triples": 13001666
+    }
+  },
+  "diff": {
+    "added_triples": 5760234,
+    "removed_triples": 888848,
+    "persistent_triples": 7208624,
+    "emerged_entities": 36653,
+    "disappeared_entities": 33051,
+    "emerged_relations": 0,
+    "disappeared_relations": 5
+  },
+  "tasks": {
+    "task_0_base": {
+      "num_triples": 8100498,
+      "splits": {
+        "train": 5670350,
+        "val": 810049,
+        "test": 1620099
+      }
+    },
+    "task_1_disease_related": {
+      "num_triples": 17009,
+      "splits": {
+        "train": 11908,
+        "val": 1700,
+        "test": 3401
+      }
+    },
+    "task_2_gene_protein": {
+      "num_triples": 2850593,
+      "splits": {
+        "train": 1995416,
+        "val": 285059,
+        "test": 570118
+      }
+    },
+    "task_3_phenotype_related": {
+      "num_triples": 47997,
+      "splits": {
+        "train": 33599,
+        "val": 4799,
+        "test": 9599
+      }
+    },
+    "task_4_biological_process": {
+      "num_triples": 116118,
+      "splits": {
+        "train": 81284,
+        "val": 11611,
+        "test": 23223
+      }
+    },
+    "task_5_anatomy_pathway": {
+      "num_triples": 2753599,
+      "splits": {
+        "train": 1926873,
+        "val": 275267,
+        "test": 550535
+      }
+    }
+  },
+  "features": {
+    "num_drugs": 7957,
+    "drugs_with_text": 4752,
+    "num_diseases": 17080,
+    "diseases_with_text": 16673,
+    "total_nodes": 129312
+  },
+  "build_time_seconds": 173.0
+}

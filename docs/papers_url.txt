@@ -1,0 +1,22 @@
+# PrimeKG-CL: Continual Learning on Biomedical Knowledge Graphs for Drug Repurposing
+
+## 📚 References & Related Literature
+
+This project builds upon foundational biomedical knowledge graphs and continual learning methodologies. Below are the key papers and datasets utilized in this benchmark:
+
+### 1. Original Dataset
+* **PrimeKG (Precision Medicine Knowledge Graph):** The foundational biomedical knowledge graph integrating multimodal clinical and biological data.
+  * **Paper:** [Nature Scientific Data - PrimeKG](https://www.nature.com/articles/s41597-023-01960-3)
+
+### 2. Benchmark & Continual Learning Data
+* **PrimeKG-CL Benchmark:** The temporal snapshots and continual learning benchmark structure designed for evolving knowledge graphs.
+  * **Paper/Reference:** [arXiv:2605.10529](https://arxiv.org/abs/2605.10529)
+
+### 3. Methodology & Core Approaches
+* **Graph Neural Networks for Drug Repurposing:** Core methodological frameworks and graph representation learning techniques.
+  * **Reference:** [ResearchGate - Drug Repurposing Using Graph Neural Networks](https://www.researchgate.net/publication/404233588_Drug_Repurposing_Using_Graph_Neural_Networks_GNN)
+
+---
+### 🔬 Additional Papers (To be updated)
+* *[Add any upcoming papers, related literature, or baseline methodologies here]*
+* **Paper Title:** [Link Description](https://...)
