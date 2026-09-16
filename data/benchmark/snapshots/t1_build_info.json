@@ -1,0 +1,53 @@
+{
+  "build_time_seconds": 302.7,
+  "enabled_databases": [
+    "bgee",
+    "ctd",
+    "gene_ontology",
+    "gene2go",
+    "hpo",
+    "hpoa",
+    "mondo",
+    "uberon",
+    "gene_names"
+  ],
+  "disabled_databases": [
+    "reactome",
+    "disgenet",
+    "drugbank",
+    "umls",
+    "drugcentral",
+    "sider",
+    "ppi"
+  ],
+  "carried_drug_edges_from": "data/benchmark/snapshots/kg_t0.csv",
+  "total_edges": 13001666,
+  "relation_types": 25,
+  "edge_counts": {
+    "anatomy_protein_present": 7529620,
+    "drug_drug": 2672628,
+    "anatomy_protein_absent": 730884,
+    "protein_protein": 642150,
+    "bioprocess_protein": 276812,
+    "cellcomp_protein": 190278,
+    "molfunc_protein": 187464,
+    "disease_protein": 160822,
+    "drug_effect": 129568,
+    "pathway_protein": 85292,
+    "bioprocess_bioprocess": 83448,
+    "contraindication": 61350,
+    "drug_protein": 51306,
+    "phenotype_phenotype": 47354,
+    "exposure_protein": 35880,
+    "anatomy_anatomy": 29346,
+    "molfunc_molfunc": 24824,
+    "indication": 18776,
+    "disease_disease": 16346,
+    "cellcomp_cellcomp": 9326,
+    "phenotype_protein": 6660,
+    "off-label use": 5136,
+    "pathway_pathway": 5070,
+    "disease_phenotype_positive": 1322,
+    "disease_phenotype_negative": 4
+  }
+}
