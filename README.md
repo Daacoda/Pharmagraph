@@ -30,7 +30,7 @@ prediction system that:
   research triage, not just leaderboard ranking.
 
 Full dataset documentation (schema, provenance, task splits, feature
-coverage) lives in [`data/README.md`](data/README.md); this file focuses on
+coverage) lives in [`data/benchmark/README.md`](data/benchmark/README.md); this file focuses on
 *what we are doing with it and why*.
 
 ## 2. Data (summary)
@@ -50,7 +50,7 @@ unchanged. This diff is what makes the benchmark genuinely temporal rather
 than synthetically split, and it's the basis for the stratified evaluation
 (persistent / added / removed) used in Step 9 below.
 
-See `data/README.md` for the full breakdown: task definitions, multimodal
+See `data/benchmark/README.md` for the full breakdown: task definitions, multimodal
 feature coverage, and citation information.
 
 ## 3. Methodology
