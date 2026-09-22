@@ -1,6 +1,6 @@
 # PharmaGraph — Continual Graph Learning for Drug Repurposing on Evolving Biomedical Knowledge Graphs
 <p align="center">
-  <img src="figures/pharmagraph_team_logo.png" alt="PharmaGraph Team Logo" width="220"/>
+  <img src="figures/pharmagraph_team_logo.png" alt="PharmaGraph Team Logo" width="400"/>
 </p>
 
 **Status:** 🟢 Completed · 🔵 In Progress · ⚫ Planned
