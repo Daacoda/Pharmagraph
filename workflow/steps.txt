@@ -28,7 +28,7 @@ The complete workflow and operational pipeline of **PharmaGraph** are structured
 
 
 # workflow Methodology
-.```mermaid
+```mermaid
 flowchart TD
     S1["🟢 1. Foundation<br/>Load PrimeKG-CL t0 snapshot"]
     S2["🟢 2. Preprocessing<br/>Clean and build HeteroData graph"]
