@@ -8,7 +8,7 @@ Try it
 
 cd dashboard   
 Rscript Run_App.R
-
+c
 ## Architecture
 
 The app is split into four files, each with one job:
