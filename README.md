@@ -49,20 +49,60 @@ graph TD
 
 ## 2. Data (summary)
 
-PharmaGraph uses the **PrimeKG-CL Benchmark v1.0**:
+PharmaGraph uses the **PrimeKG-CL Benchmark v1.0**, providing a genuinely temporal evaluation framework rather than a synthetic split:
 
-| | t0 (Jun 2021) | t1 (Jul 2023) |
-|---|---|---|
-| Triples | 8,100,498 | 13,001,666 |
-| Nodes | 129,375 | 134,211 |
-| Relations | 30 | 25 |
+| Snapshot / Layer | Role & Description | Triples | Nodes | Relations |
+| :--- | :--- | :---: | :---: | :---: |
+| **$t_0$ — June 2021** | Historical training and candidate generation baseline. | 8,100,498 | 129,375 | 30 |
+| **$t_1$ — July 2023** | Temporal evaluation target held out exclusively for testing. | 13,001,666 | 134,211 | 25 |
+| **External Evidence** | Complementary evidence layer (Open Targets, PPI, GO), separate from PrimeKG-CL. | — | — | — |
 
-Between t0 and t1: **5,760,234** triples were added (GO annotations,
-disease-phenotype refinement, drug-target updates), **888,848** were removed
-(retracted associations, ontology corrections), and **7,208,624** persisted
-unchanged. This diff is what makes the benchmark genuinely temporal rather
-than synthetically split, and it's the basis for the stratified evaluation
-(persistent / added / removed) used in Step 9 below.
+**Temporal Evolution & Diff Breakdown:**
+Between $t_0$ and $t_1$, **7,208,624** triples persisted unchanged, **5,760,234** were added (including GO annotations, disease-phenotype refinement, and drug-target updates), and **888,848** were removed (due to retracted associations and ontology corrections). This structural evolution forms the exact foundation for the stratified evaluation (persistent / added / removed edges) used in Step 9.
+
+### **Core Data Pipeline Flow**
+```mermaid
+flowchart LR
+
+    T0["🟢 2021<br/><b>PrimeKG t0</b><br/>June snapshot<br/><br/>8.1M triples<br/>129K nodes"]
+
+    P["🔵 Temporal Learning<br/><br/>Historical knowledge<br/>Drug–Disease prediction<br/>Candidate ranking"]
+
+    T1["🟣 2023<br/><b>PrimeKG-CL t1</b><br/>July reconstruction<br/><br/>13.0M triples<br/>134K nodes"]
+
+    E["🟠 External Evidence<br/><br/>Open Targets<br/>PPI / GO<br/>Pathway & literature context"]
+
+    V["⚫ Temporal Evaluation<br/><br/>Persistent<br/>Added<br/>Removed"]
+
+    T0 --> P
+    P --> T1
+    P --> E
+    T1 --> V
+    E --> V
+
+    classDef t0 fill:#00a65a,stroke:#00753d,color:#ffffff,stroke-width:2px
+    classDef process fill:#3c8dbc,stroke:#2c6a8f,color:#ffffff,stroke-width:2px
+    classDef t1 fill:#7E57C2,stroke:#512DA8,color:#ffffff,stroke-width:2px
+    classDef evidence fill:#EF6C00,stroke:#E65100,color:#ffffff,stroke-width:2px
+    classDef eval fill:#5f6368,stroke:#3f4245,color:#ffffff,stroke-width:2px
+
+    class T0 t0
+    class P process
+    class T1 t1
+    class E evidence
+    class V eval
+'''
+
+### Snapshot roles
+
+| Snapshot | Role |
+|---|---|
+| **t0 — June 2021** | Historical training / candidate generation |
+| **t1 — July 2023** | Temporal evaluation target |
+| **External evidence** | Complementary evidence layer, separate from PrimeKG-CL |
+| **Temporal diff** | Persistent, added, and removed relationships |
+
+
 
 See `data/benchmark/README.md` for the full breakdown: task definitions, multimodal
 feature coverage, and citation information.
