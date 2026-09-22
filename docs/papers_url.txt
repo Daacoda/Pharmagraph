@@ -16,7 +16,10 @@ This project builds upon foundational biomedical knowledge graphs and continual 
 * **Graph Neural Networks for Drug Repurposing:** Core methodological frameworks and graph representation learning techniques.
   * **Reference:** [ResearchGate - Drug Repurposing Using Graph Neural Networks](https://www.researchgate.net/publication/404233588_Drug_Repurposing_Using_Graph_Neural_Networks_GNN)
 
----
-### 🔬 Additional Papers (To be updated)
-* *[Add any upcoming papers, related literature, or baseline methodologies here]*
-* **Paper Title:** [Link Description](https://...)
+
+ ** [Multi-Relational Knowledge Graph for Drug Repurposing and Side-Effect Burden Prediction Using Gene–Drug–Disease Associations](https://www.mdpi.com/2673-6411/6/2/13)
+  * **Authors:** Afsana Sharmin, Bahar Uddin Mahmud
+  * **Journal:** BioChem (MDPI)
+  * **Year:** 2026
+  * **Relevance to Project:** Focuses on multi-relational knowledge graphs, drug repurposing, and evaluating gene-drug-disease associations, serving as a strong methodological benchmark for our PharmaGraph project.
+    Reference:**( https://www.mdpi.com/2673-6411/6/2/13)

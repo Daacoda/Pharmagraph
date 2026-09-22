@@ -1,6 +1,6 @@
 source("dependencies.R")
 source("UI.R")
-source("server.R")
+source("Server.R")
 
 shinyApp(
   ui = ui,

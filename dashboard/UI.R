@@ -186,7 +186,7 @@ ui <- dashboardPage(
             title = "Network Statistics",
             width = 12,
 
-            plotlyOutput(
+            visNetworkOutput(
               "network_plot",
               height = "500px"
             )
