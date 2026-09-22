@@ -2,6 +2,31 @@ Steps: [Convert the steps into workflow diagram (include tools for each step) an
 . Pull down the reads
 **Status:** 🟢 Completed · 🔵 In Progress · ⚫ Planned
 
+Project workflow
+## 🔄 PharmaGraph End-to-End Pipeline
+
+The complete workflow and operational pipeline of **PharmaGraph** are structured across the following core stages:
+
+1. **Data Ingestion & Preprocessing**  
+   * Ingesting multi-source biomedical data from PrimeKG and handling temporal snapshots ($t_0$ and $t_1$).  
+   * Standardizing nodes and directed edges using rigorous database accessions (`NCBI`, `DrugBank`, `MONDO`, `GO`, `UBERON`, etc.).
+
+2. **Temporal Edge Dynamics & Splitting**  
+   * Categorizing graph interactions into three distinct dynamic classes: **Persistent**, **Added**, and **Removed** edges to capture true structural evolution over time.
+
+3. **Graph Machine Learning & Representation Learning**  
+   * Training robust graph neural network architectures and vectorizing random walks (extending DREAMwalk and graph embedding models) for link prediction and drug repurposing.
+
+4. **Scoring, Evidence Integration & Path Explanation**  
+   * Computing multi-hop biological paths (Drug $\rightarrow$ Target $\rightarrow$ Pathway $\rightarrow$ Disease) and integrating auxiliary evidence features (PPI, GO similarity) for evidence-aware ranking.
+
+5. **Interactive R Shiny Dashboard & Visualization**  
+   * Exposing temporal graph snapshots, metrics (`statistics.json`), and 1-hop disease-specific networks through a modular, interactive R Shiny dashboard (`dashboard/` component).
+
+6. **Rigorous Evaluation & Next Steps**  
+   * Testing exclusively on the updated snapshot, tracking multi-task performance, and executing parallel workflows across coding, manuscript drafting, and presentation polish.
+
+
 # workflow Methodology
 .```mermaid
 flowchart TD
@@ -23,8 +48,7 @@ flowchart TD
 
     class S1,S2 done
     class S3,S4 progress
-    class S5,S6,S7,S8,S9 planned
-.
+    class S5,S6,S7,S8,S9 planned.
 .
 .
 .
