@@ -45,6 +45,7 @@ graph TD
     E -->|R, R Shiny, JSON| F["6. Rigorous Evaluation"]
     F -->|Stratified Metrics| G["7. Manuscript & Workflow"]
     G -->|Overleaf, LaTeX, Git| H["Deployment & Final Output"]
+```
 
 ## 2. Data (summary)
 
