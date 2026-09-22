@@ -1,6 +1,3 @@
-
-cd dashboard   
-Rscript Run_App.R
 # PharmaGraph — Continual Graph Learning for Drug Repurposing on Evolving Biomedical Knowledge Graphs
 
 ## 1. Introduction
@@ -72,6 +69,18 @@ be updated as steps complete.
 | 9. Evaluation | Test exclusively on the t1 (Jul 2023) snapshot, stratified by persistent / added / removed edges. Metrics: Hits@K, MRR, AUPRC, Precision@K, evidence support rate. | ⏳ Planned |
 
 **Current status:** Steps 1–2 complete; moving into Steps 3–4.
+
+4. Interactive Dashboard
+
+Alongside the modeling pipeline, PharmaGraph includes an R Shiny dashboard for exploring the benchmark itself: how the graph changed between snapshots, which drug–disease edges were added/removed/persisted, and a network view around any selected disease.
+
+Overview — headline stats and an added/removed/persistent triple breakdown between t0 and t1.
+Temporal Evolution — the same breakdown, per relation type.
+Drug–Disease — per-disease view of every relevant edge, tagged by which snapshot(s) it appears in.
+Network Analysis — a 1-hop interactive graph around a selected disease (t1 snapshot).
+Benchmarking — reserved for model results (Hits@K, MRR, AUPRC, Precision@K) once evaluation (Step 9 above) is complete; currently a placeholder.
+
+The app reads small precomputed summaries (statistics.json, diffs/diff_t0_t1.json) directly, and queries the raw 8.1M/13M-row snapshots through a cached Python layer (src/dashboard_data.py) exposed to R via reticulate — full architecture, data dependencies, and run instructions are documented in dashboard/README.md.
 
 ## 4. Repository layout
 
