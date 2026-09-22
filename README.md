@@ -72,6 +72,8 @@ be updated as steps complete.
 | 8. Path explanation | Extract multi-hop biological paths (Drug → Target → Pathway → Disease) for top candidates; generate GraphRAG-style explanations. | ⏳ Planned |
 | 9. Evaluation | Test exclusively on the t1 (Jul 2023) snapshot, stratified by persistent / added / removed edges. Metrics: Hits@K, MRR, AUPRC, Precision@K, evidence support rate. | ⏳ Planned |
 
+![PharmaGraph Pipeline](figures/pharmagraph_pipeline.png)
+
 **Current status:** Steps 1–2 complete; moving into Steps 3–4.
 
 4. Interactive Dashboard
