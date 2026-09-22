@@ -38,15 +38,14 @@ coverage) lives in [`data/benchmark/README.md`](data/benchmark/README.md); this 
 
 ```mermaid
 graph TD
-    A["1. Data Ingestion & Preprocessing"] -->|Tools: Python, Pandas, PrimeKG| B["2. Temporal Edge Dynamics"]
-    B -->|Tools: PyTorch Geometric, NumPy| C["3. Graph Machine Learning"]
-    C -->|Tools: PyTorch, GNNs, DREAMwalk| D["4. Scoring & Evidence Integration"]
-    D -->|Tools: Open Targets, PPI, GO| E["5. Interactive Dashboard"]
-    E -->|Tools: R, R Shiny, JSON| F["6. Rigorous Evaluation"]
-    F -->|Tools: Stratified Metrics (Hits@K, MRR)| G["7. Manuscript & Parallel Workflow"]
-    G -->|Tools: Overleaf, LaTeX, Git| H["Deployment & Final Output"]
+    A["1. Data Ingestion & Preprocessing"] -->|Python, Pandas, PrimeKG| B["2. Temporal Edge Dynamics"]
+    B -->|PyTorch Geometric, NumPy| C["3. Graph Machine Learning"]
+    C -->|PyTorch, GNNs, DREAMwalk| D["4. Scoring & Evidence"]
+    D -->|Open Targets, PPI, GO| E["5. Interactive Dashboard"]
+    E -->|R, R Shiny, JSON| F["6. Rigorous Evaluation"]
+    F -->|Stratified Metrics| G["7. Manuscript & Workflow"]
+    G -->|Overleaf, LaTeX, Git| H["Deployment & Final Output"]
 
-    
 ## 2. Data (summary)
 
 PharmaGraph uses the **PrimeKG-CL Benchmark v1.0**:
