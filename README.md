@@ -80,8 +80,7 @@ Drug–Disease — per-disease view of every relevant edge, tagged by which snap
 Network Analysis — a 1-hop interactive graph around a selected disease (t1 snapshot).
 Benchmarking — reserved for model results (Hits@K, MRR, AUPRC, Precision@K) once evaluation (Step 9 above) is complete; currently a placeholder.
 
-The app reads small precomputed summaries (statistics.json, diffs/diff_t0_t1.json) directly, and queries the raw 8.1M/13M-row snapshots through a cached Python layer (src/dashboard_data.py) exposed to R via reticulate — full architecture, data dependencies, and run instructions are documented in dashboard/README.md.
-
+The app reads small precomputed summaries (statistics.json, diffs/diff_t0_t1.json) directly, and queries the raw 8.1M/13M-row snapshots through a cached Python layer (src/dashboard_data.py) exposed to R via reticulate full architecture, data dependencies, and run instructions are documented in [dashboard/README.md](dashboard/README.md).
 ## 4. Repository layout
 
 See the top-level directory listing for the full structure (`data/`,
