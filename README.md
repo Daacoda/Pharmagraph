@@ -2,6 +2,8 @@
 <p align="center">
   <img src="figures/pharmagraph_team_logo.png" alt="PharmaGraph Team Logo" width="220"/>
 </p>
+
+**Status:** 🟢 Completed · 🔵 In Progress · ⚫ Planned
 ## 1. Introduction
 
 Drug repurposing — finding new therapeutic uses for existing drugs — depends
@@ -13,7 +15,7 @@ retracted as ontologies are corrected. A model trained once on a fixed graph
 silently drifts out of date, and standard continual-learning (CL) benchmarks
 don't capture this — they simulate "new tasks" by artificially splitting a
 single static graph, not by tracking how a real graph actually changed over
-time.
+time.لهف 
 
 **PharmaGraph** addresses this gap directly. It is built on **PrimeKG-CL**, a
 benchmark constructed from two genuine temporal snapshots of PrimeKG — June

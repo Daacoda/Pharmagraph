@@ -1,6 +1,29 @@
 Steps: [Convert the steps into workflow diagram (include tools for each step) and update README.md]
 . Pull down the reads
-.
+**Status:** 🟢 Completed · 🔵 In Progress · ⚫ Planned
+
+# workflow Methodology
+.```mermaid
+flowchart TD
+    S1["🟢 1. Foundation<br/>Load PrimeKG-CL t0 snapshot"]
+    S2["🟢 2. Preprocessing<br/>Clean and build HeteroData graph"]
+    S3["🔵 3. Task definition<br/>Drug-disease link prediction"]
+    S4["🔵 4. Baseline model<br/>Heterogeneous GraphSAGE, 2 layers"]
+    S5["⚫ 5. Loss and sampling<br/>Margin ranking with hard negatives"]
+    S6["⚫ 6. Evidence scoring<br/>Open Targets, PPI, GO scores"]
+    S7["⚫ 7. Evidence-aware ranking<br/>Combine model and evidence scores"]
+    S8["⚫ 8. Path explanation<br/>Multi-hop biological paths"]
+    S9["⚫ 9. Evaluation<br/>Stratified metrics on t1 snapshot"]
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
+
+    classDef done fill:#00a65a,stroke:#00753d,color:#ffffff,stroke-width:2px
+    classDef progress fill:#3c8dbc,stroke:#2c6a8f,color:#ffffff,stroke-width:2px
+    classDef planned fill:#5f6368,stroke:#3f4245,color:#ffffff,stroke-width:2px
+
+    class S1,S2 done
+    class S3,S4 progress
+    class S5,S6,S7,S8,S9 planned
 .
 .
 .
