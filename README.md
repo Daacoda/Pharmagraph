@@ -73,6 +73,9 @@ The pipeline below reflects our current working plan. Status markers show
 where we actually are, not where the plan assumes we'll end up — this will
 be updated as steps complete.
 
+[ 🟢 Data Ingestion & Prep ] ──> [ 🔵 Heterogeneous GNN ] ──> [ ⏳ Evidence Scoring ] ──> [ ⏳ GraphRAG Explanation ] ──> [ ⏳ Temporal Evaluation ]
+
+
 | Step | Description | Status |
 |---|---|---|
 | 1. Foundation | Load PrimeKG-CL t0 (Jun 2021) — 8.1M triples, 10 node types, 30 relations. t1 (Jul 2023) is held out entirely for temporal testing. | ✅ Done |
