@@ -15,7 +15,7 @@ retracted as ontologies are corrected. A model trained once on a fixed graph
 silently drifts out of date, and standard continual-learning (CL) benchmarks
 don't capture this — they simulate "new tasks" by artificially splitting a
 single static graph, not by tracking how a real graph actually changed over
-time.لهف 
+time.
 
 **PharmaGraph** addresses this gap directly. It is built on **PrimeKG-CL**, a
 benchmark constructed from two genuine temporal snapshots of PrimeKG — June
@@ -92,17 +92,6 @@ flowchart LR
     class E evidence
     class V eval
 ```
-
-### Snapshot roles
-
-| Snapshot | Role |
-|---|---|
-| **t0 — June 2021** | Historical training / candidate generation |
-| **t1 — July 2023** | Temporal evaluation target |
-| **External evidence** | Complementary evidence layer, separate from PrimeKG-CL |
-| **Temporal diff** | Persistent, added, and removed relationships |
-
-
 
 See `data/benchmark/README.md` for the full breakdown: task definitions, multimodal
 feature coverage, and citation information.
