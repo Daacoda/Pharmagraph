@@ -50,9 +50,7 @@ flowchart TD
     class S3,S4 progress
     class S5,S6,S7,S8,S9 planned.
 .```
-.
-.
-.
-.
-.
-.
+pip install -r requirements.txt
+python src/Data_laoder.py
+python src/feature_engineering.py
+

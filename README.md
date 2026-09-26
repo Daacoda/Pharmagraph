@@ -46,7 +46,6 @@ graph TD
     F -->|Stratified Metrics| G["7. Manuscript & Workflow"]
     G -->|Overleaf, LaTeX, Git| H["Deployment & Final Output"]
 ```
-
 ## 2. Data (summary)
 
 PharmaGraph uses the **PrimeKG-CL Benchmark v1.0**, providing a genuinely temporal evaluation framework rather than a synthetic split:

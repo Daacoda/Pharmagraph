@@ -126,15 +126,12 @@ print(df[["x_idx", "relation", "y_idx", "x_type", "y_type"]].head())
 # ---------------------------------------------------------------------------
 os.makedirs("processed", exist_ok=True)
 
-nodes.to_csv("processed/entities.csv", index=False)
-
 edges_final = df[["x_idx", "relation", "y_idx", "x_type", "y_type"]].rename(
     columns={"x_idx": "head_idx", "y_idx": "tail_idx"}
 )
 edges_final.to_parquet("processed/edges.parquet", index=False)
 
 print("Saved:")
-print("- processed/entities.csv ->", len(nodes), "rows")
 print("- processed/edges.parquet ->", len(edges_final), "rows")
 
 
@@ -155,6 +152,9 @@ df["y_local"] = df.set_index(["y_id", "y_type"]).index.map(local_lookup).values
 missing = df["x_local"].isnull().sum() + df["y_local"].isnull().sum()
 print("Edges that failed to get a local index:", missing)
 
+nodes_typed.to_csv("processed/entities.csv", index=False)
+print("- processed/entities.csv ->", len(nodes_typed), "rows (includes local_idx)")
+
 
 # ---------------------------------------------------------------------------
 # 11. Build the HeteroData graph object
@@ -173,3 +173,6 @@ for (rel, x_type, y_type), group in df.groupby(["relation", "x_type", "y_type"])
     data[(x_type, rel, y_type)].edge_index = edge_index
 
 print(data)
+
+torch.save(data, os.path.join("processed", "pharmagraph_hetero_t0.pt"))
+print("Saved: processed/pharmagraph_hetero_t0.pt")
