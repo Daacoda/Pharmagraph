@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+#device = torch.device('cpu')
 processed_dir = "processed"
 output_dir = "output" 
 
