@@ -1,3 +1,7 @@
 processed/
 Clean_data/
 *.pt
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
