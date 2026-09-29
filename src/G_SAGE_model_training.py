@@ -66,6 +66,9 @@ sampled_random = random_negatives[:n_random_target]
 
 final_neg_drug = [p[0] for p in sampled_hard] + [p[0] for p in sampled_random]
 final_neg_disease = [p[1] for p in sampled_hard] + [p[1] for p in sampled_random]
+# UPDATE: tracks hard vs random negatives, needed for candidate_pairs.csv below
+final_neg_is_hard = [True] * len(sampled_hard) + [False] * len(sampled_random)  
+
 
 print(f"Positives: {n_positives} | Negatives: {len(final_neg_drug)} (ratio {len(final_neg_drug)/n_positives:.1f}:1)")
 
@@ -80,9 +83,26 @@ pos_val_idx, pos_test_idx = train_test_split(pos_temp_idx, test_size=0.50, rando
 
 neg_drug_arr = np.array(final_neg_drug)
 neg_disease_arr = np.array(final_neg_disease)
-
+# UPDATE: array form of the hard/random flag, used when saving candidate_pairs.csv
 neg_train_idx, neg_temp_idx = train_test_split(np.arange(len(neg_drug_arr)), test_size=0.30, random_state=42)
+neg_is_hard_arr = np.array(final_neg_is_hard)  
 neg_val_idx, neg_test_idx = train_test_split(neg_temp_idx, test_size=0.50, random_state=42)
+
+# UPDATE: Candidate pairs CSV for downstream evaluation, including the is_hard_negative flag
+rows = []
+for split_name, idx in [("train", pos_train_idx), ("val", pos_val_idx), ("test", pos_test_idx)]:
+    for i in idx:
+        rows.append((pos_drug_arr[i], pos_disease_arr[i], 1, False, split_name))
+
+for split_name, idx in [("train", neg_train_idx), ("val", neg_val_idx), ("test", neg_test_idx)]:
+    for i in idx:
+        rows.append((neg_drug_arr[i], neg_disease_arr[i], 0, bool(neg_is_hard_arr[i]), split_name))
+
+out = pd.DataFrame(rows, columns=["drug_idx", "disease_idx", "label", "is_hard_negative", "split"])
+out.to_csv(os.path.join(processed_dir, "candidate_pairs.csv"), index=False)
+print(f"Successfully saved processed/candidate_pairs.csv: {len(out)} pairs directly from training script!")
+
+
 
 val_test_pairs = set()
 for idx in np.concatenate([pos_val_idx, pos_test_idx]):
@@ -232,8 +252,8 @@ torch.save({
     "test_auroc": test_auroc,
     "test_auprc": test_auprc,
     "val_auprc": best_auprc,
-    "notes": "v2: 2-layer heterogeneous GraphSAGE, real Morgan fingerprints for drugs (256-dim)"
-    }, os.path.join(save_dir, "models", "graphsage_v2_real_features.pt"))
+    "notes": "v3: 2-layer heterogeneous GraphSAGE, real Morgan fingerprints for drugs (256-dim)"
+    }, os.path.join(save_dir, "models", "graphsage_v3_real_features.pt"))
 
 print("\nSaved to output folder successfully!")
 
