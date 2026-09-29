@@ -93,3 +93,31 @@ If you use this dataset, please cite:
 - Code components: MIT.
 - Data files: CC BY 4.0, inheriting PrimeKG's license; users must respect upstream-database licenses where applicable.
 - See `LICENSE` for details.
+
+
+🧬 Open Targets Data Description: association_by_datatype_indirect
+This dataset includes extracted records of association_by_datatype_indirect from the Open Targets platform, which is used to study and evaluate indirect target-disease associations, support drug repurposing research, and analyze biomedical knowledge graphs.
+
+📋 Data Schema & Components
+These files represent the extracted biological and disease-related interaction data, comprising the following core elements:
+
+Ensembl Gene IDs: The standard identifiers for the targeted genes (e.g., ENSG...).
+
+EFO Disease IDs: Standardized disease classifications based on the Experimental Factor Ontology (e.g., EFO_00001836).
+
+Association Scores & Evidence Strings: Numerical values and metrics associated with each gene-disease pair to evaluate the strength of scientific and biological evidence.
+
+🛠️ Project Usage
+This data is utilized and integrated within pipelines for:
+
+Filtering and analyzing relationships between genetic targets and diseases.
+
+Constructing and representing biomedical knowledge networks (Knowledge Graphs).
+
+Training and evaluating machine learning models for drug-disease prediction tasks.
+
+📥 Data Source & Download
+The raw Parquet files for this dataset can be accessed and downloaded directly from the official Open Targets FTP server:
+
+Repository Link: 
+https://ftp.ebi.ac.uk/pub/databases/opentargets/platform/21.11/output/etl/parquet/
