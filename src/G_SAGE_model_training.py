@@ -244,7 +244,7 @@ print(f"Test AUROC: {test_auroc:.4f}")
 print(f"Test AUPRC: {test_auprc:.4f}")
 
 
-
+"""
 save_dir = "output"
 os.makedirs(os.path.join(save_dir, "models"), exist_ok=True)
 torch.save({
@@ -256,7 +256,7 @@ torch.save({
     }, os.path.join(save_dir, "models", "graphsage_v3_real_features.pt"))
 
 print("\nSaved to output folder successfully!")
-
+"""
 model = HeteroGraphSAGE(train_graph.node_types, train_graph.edge_types, hidden_channels=128, out_channels=128).to(device)
 optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=1e-4)  # weight decay جديد
 margin_loss_fn = nn.MarginRankingLoss(margin=1.0)
@@ -404,3 +404,16 @@ audit_chemical_twin_bias(
     train_drug_ids, test_drug_ids,
     test_pair_drug_ids, test_pair_disease_ids, test_pair_labels,
 )
+
+save_dir = "output"
+os.makedirs(os.path.join(save_dir, "models"), exist_ok=True)
+torch.save({
+    "model_state": best_state,
+    "test_auroc": test_auroc_v3,
+    "test_auprc": test_auprc_v3,
+    "val_auprc": best_auprc,
+    "notes": "Final baseline: 2-layer heterogeneous GraphSAGE, real Morgan fingerprints (256-dim), "
+             "dropout(0.3) + weight_decay(1e-4), indication vs contraindication+random negatives (2:1)"
+}, os.path.join(save_dir, "models", "graphsage_v3_real_features.pt"))
+
+print(f"\nFinal model saved to {save_dir}/models/graphsage_v3_real_features.pt")
