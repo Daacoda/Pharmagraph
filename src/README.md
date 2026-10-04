@@ -51,6 +51,7 @@ src/
 | [`explainer.py`](file:///home/nothim/HIM/projectWork/pharmagraph/src/explainer.py) | **Complete** | Extracts top-$K$ mechanistic biological paths (Direct Target, Pathway-Mediated, PPI Interactome) via bidirectional BFS scored with DWPC hub damping: $\text{DWPC}(p) = \prod_{i=0}^{l} (\deg(v_i))^{-w}$ ($w=0.4$) and NPMI edge co-occurrence weights. Generates structured LLM prompts in $<2.5\text{ms}$. |
 | [`evaluator.py`](file:///home/nothim/HIM/projectWork/pharmagraph/src/evaluator.py) | **Complete** | Measures longitudinal temporal evaluation $t_0 \to t_1$, computing Hits@10, Hits@20, Hits@50, MRR, stratified performance, and Candidate Report Cards for clinical evaluation. Verified on real data (Hits@10: 62.4%, Hits@50: 96.0%, MRR: 0.277). |
 | [`compare_models.py`](file:///home/nothim/HIM/projectWork/pharmagraph/src/compare_models.py) | **Complete** | Unified comparative benchmark executing GraphSAGE (422k params) vs R-GCN 16-basis (142k params) on identical CPU preprocessing and feature engineering pipelines. |
+| [`dashboard_data.py`](file:///home/nothim/HIM/projectWork/pharmagraph/src/dashboard_data.py) | **Complete** | Low-latency in-process C-API data bridge supplying the R Shiny frontend via Reticulate (`get_disease_list`, `get_drug_disease_subset`, `get_subgraph`, `get_relation_diff`, `get_benchmark_table`) with $p_{95} \le 120\text{ms}$ query latency over precomputed caches. |
 
 ---
 
@@ -72,7 +73,7 @@ Execution on this branch is strictly tailored for commodity execution without GP
 | **Phase 2** | **Heterogeneous GNN Modularization & Training** | Modularized `GraphSAGE`, `rgcn.py`, `sampler.py`, and `trainer.py`; real data training runs on CPU; Test AUROC $\ge 0.90$, Test AUPRC $\ge 0.50$, Twin Bias $\Delta\text{AUROC} \le 0.03$. | **COMPLETE**  *(Verified: `tests/test_phase2_gnn.py` 5/5 passing)* |
 | **Phase 3** | **Validation Platt Scaling & Evidence Fusion** | L-BFGS calibrated temperature scaling; composite score combining GNN logits and orthogonal evidence ($\alpha=0.65$); ECE $\le 0.10$. | **COMPLETE**  *(Verified: `tests/test_phase3_calibration.py` 3/3 passing)* |
 | **Phase 4** | **Mechanistic GraphRAG Path Explainer** | Bidirectional BFS path finder (3 canonical metapaths); DWPC hub damping ($w=0.4$) + NPMI edge scoring; path extraction latency $< 2.5\text{ms}$ per drug-disease pair. | **COMPLETE**  *(Verified: `tests/test_phase4_explainer.py` 3/3 passing)* |
-| **Phase 5** | **Temporal Generalization & Comparative Benchmark** | Longitudinal temporal evaluation $t_0 \to t_1$ (Hits@K, MRR, Candidate Report Cards); GraphSAGE vs R-GCN side-by-side benchmark runner. | **COMPLETE**  *(Verified: `tests/test_phase5_evaluator.py` 3/3 passing)* |
+| **Phase 5** | **Temporal Generalization & Dashboard Integration** | Longitudinal temporal evaluation $t_0 \to t_1$; GraphSAGE vs R-GCN benchmark; interactive R Shiny data bridge conforming to all schema contracts. | **COMPLETE**  *(Verified: `tests/test_phase5_evaluator.py` 3/3 passing, `tests/test_phase5_dashboard.py` 5/5 passing)* |
 
 ---
 
@@ -80,7 +81,7 @@ Execution on this branch is strictly tailored for commodity execution without GP
 
 All code modifications are subject to strict test verification on real data.
 
-To run all automated verification suites (18 tests spanning Phases 1 through 5):
+To run all automated verification suites (23 tests spanning Phases 1 through 5):
 ```bash
 # Activate virtual environment
 source .venv/bin/activate
