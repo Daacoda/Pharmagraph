@@ -1,0 +1,21 @@
+{
+  "dataset": "PrimeKG-CL t0",
+  "num_nodes": 129312,
+  "num_relations": 50,
+  "evaluation_pairs": 225,
+  "models": {
+    "HeteroGraphSAGE": {
+      "parameters": 422400,
+      "forward_latency_cpu_seconds": 4.5385,
+      "test_auroc": 0.4563,
+      "test_auprc": 0.3671
+    },
+    "HeteroRGCN_basis16": {
+      "parameters": 142272,
+      "num_bases": 16,
+      "forward_latency_cpu_seconds": 12.6262,
+      "test_auroc": 0.2616,
+      "test_auprc": 0.2316
+    }
+  }
+}

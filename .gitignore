@@ -1,5 +1,7 @@
 processed/
 Clean_data/
 *.pt
-venv/
-data/association_by_datatype_indirect/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
