@@ -70,10 +70,11 @@ server <- function(input, output, session) {
   # ===============================================================
 
   relation_diff <- reactive({
-    # app_diff$by_relation assumed to be a list/data.frame with
-    # columns: relation, added, removed, persistent.
-    # Adjust this line if your diff json nests it differently.
-    as.data.frame(app_diff$by_relation)
+    if (!is.null(app_diff$by_relation)) {
+      as.data.frame(app_diff$by_relation)
+    } else {
+      get_relation_diff()
+    }
   })
 
   output$edge_evolution <- renderPlotly({
@@ -129,19 +130,12 @@ server <- function(input, output, session) {
 
 
   # ===============================================================
-  # BENCHMARK — placeholder until model results exist in output/
+  # BENCHMARK — populated directly from model run results via Python bridge
   # ===============================================================
 
   output$benchmark_table <- renderDT({
-    # TODO: point this at your actual run results, e.g.
-    # jsonlite::fromJSON(file.path(root_dir, "output", "benchmark_results.json"))
-    placeholder <- data.frame(
-      Model = character(0),
-      Task = character(0),
-      MRR = numeric(0),
-      `Hits@10` = numeric(0)
-    )
-    datatable(placeholder, options = list(dom = "t"))
+    bench_df <- get_benchmark_table()
+    datatable(bench_df, options = list(pageLength = 10, dom = "t"))
   })
 
 }
