@@ -53,4 +53,9 @@ flowchart TD
 pip install -r requirements.txt
 python src/Data_laoder.py
 python src/feature_engineering.py
+python src/G_SAGE_model_training.py   
+python src/fetch_open_targets.py --ot-dir data/association_by_datatype_indirect
+python src/ppi_go_features.py
+python src/G_SAGE_model_predict.py
+python src/G_SAGE_combine_evidence.py
 
