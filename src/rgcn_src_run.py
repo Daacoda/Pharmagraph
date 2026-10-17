@@ -1,9 +1,9 @@
 """
-R-GCN run: Asmaa's GraphSAGE v3 script with ONLY the model swapped (HeteroGraphSAGE -> HeteroRGCN).
+R-GCN run:  GraphSAGE v3 script with ONLY the model swapped (HeteroGraphSAGE -> HeteroRGCN).
 Everything else (features, pairs, split, masking, loss, dropout, optimizer, early stopping,
 evaluation, twin audit) is copied unchanged from her script.
 
-Edits vs her script (all marked "# EDIT"):
+Edits vs GraphSAGE script (all marked "# EDIT"):
   1. import + use HeteroRGCN (from rgcn_model.py, same folder) instead of HeteroGraphSAGE
   2. dry-run forward before the optimizer (initializes lazy layers)
   3. checkpoint saved under a NEW name (does not overwrite her graphsage checkpoint)
