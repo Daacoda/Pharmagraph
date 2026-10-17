@@ -162,6 +162,7 @@ test_labels = torch.tensor(np.concatenate([np.ones(len(pos_test_idx)), np.zeros(
 from sklearn.metrics import roc_auc_score, average_precision_score
 
 # ---------------- MODEL (the only intended difference) ----------------
+train_graph = train_graph.to(device)
 model = HeteroRGCN(train_graph.node_types, train_graph.edge_types,
                    hidden_channels=128, out_channels=128, num_bases=30).to(device)   # EDIT 1
 
